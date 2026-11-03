@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieFinder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Поиск фильмов</h2>
+        <form id="searchForm">
+            <input type="text" id="movieInput" placeholder="Название фильма">
+            <button type="submit">Найти</button>
+            <p id="loading" style="display: none;">Загрузка...  </p>
+        </form>
+        <p id="errorInput" style="display: none; color: red;">Поле не может быть пустым</p>
+        <div id="results"></div>
+    </div>
+    <div id="modal">
+        <div id="modalContent">
+            <button id="modalClose">×</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

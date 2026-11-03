@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #12141a;
+  color: #e6e8ee;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#searchForm {
+  display: flex;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+#movieInput {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 1rem;
+  background: #1c1f28;
+  color: #e6e8ee;
+  border: 1px solid #2a2e3a;
+  border-radius: 8px;
+  outline: none;
+}
+
+#movieInput:focus {
+  border-color: #e52e71;
+}
+
+#searchForm button {
+  padding: 12px 22px;
+  font-weight: 600;
+  color: #fff;
+  background: #e52e71;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#searchForm button:hover {
+  background: #ff4585;
+}
+
+#errorInput,
+#loading {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+#results > button {
+  background: #1c1f28;
+  border: 1px solid #2a2e3a;
+  border-radius: 10px;
+  padding: 10px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+#results > button:hover {
+  border-color: #e52e71;
+  transform: translateY(-3px);
+}
+
+#results > button:focus {
+  outline: none;
+}
+
+#results > button:focus-visible {
+  outline: 2px solid #e52e71;
+}
+
+#results img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: #0f1117;
+  display: block;
+}
+
+#results p {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+}
+
+#results p:last-of-type {
+  color: #8b90a0;
+  font-size: 0.85rem;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+#modalContent {
+  background: #1c1f28;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+#modalClose {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #e6e8ee;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#modalBody img {
+  max-width: 200px;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+#modalBody p {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 520px) {
+  #searchForm {
+    flex-direction: column;
+  }
+
+  #results {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+}
